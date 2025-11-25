@@ -12,17 +12,6 @@
   <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" alt="CSS3">
 </p>
 
----
-
-### ➤ Live Demo
-
-**[Link to your live site]** `(e.g., https://the-royal.yourdomain.com)`
-
----
-
-### ➤ Screenshots
-
-*(It is highly recommended to add screenshots of the home page, room booking process, and the admin dashboard to showcase the project's UI.)*
 
 ---
 
