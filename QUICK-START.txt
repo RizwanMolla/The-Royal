@@ -1,0 +1,102 @@
+╔══════════════════════════════════════════════════════════════════╗
+║                    THE ROYAL HOTEL SYSTEM                        ║
+║                      QUICK START GUIDE                           ║
+╚══════════════════════════════════════════════════════════════════╝
+
+📋 PREREQUISITES:
+   ✓ XAMPP installed (Apache + MySQL)
+   ✓ Web browser (Chrome, Firefox, Edge)
+
+🚀 INSTALLATION (3 STEPS):
+
+   STEP 1: Copy Project
+   ─────────────────────
+   Copy "the-royal" folder to:
+   C:\xampp\htdocs\
+
+   STEP 2: Setup Database
+   ──────────────────────
+   1. Start XAMPP (Apache + MySQL)
+   2. Open: http://localhost/phpmyadmin
+   3. Click "Import" tab
+   4. Select "setup.sql" file
+   5. Click "Go"
+
+   STEP 3: Access Application
+   ──────────────────────────
+   Open browser and go to:
+   http://localhost/the-royal/
+
+🔑 LOGIN CREDENTIALS:
+
+   ADMIN ACCOUNT:
+   Email: admin@theroyal.com
+   Password: password
+
+   GUEST ACCOUNT:
+   Email: guest@example.com
+   Password: password
+
+✨ FEATURES TO TEST:
+
+   AS GUEST:
+   □ Register new account
+   □ Browse rooms
+   □ Book a room
+   □ View booking history
+
+   AS ADMIN:
+   □ View dashboard statistics
+   □ Create new room
+   □ Edit existing room
+   □ View all bookings
+
+📁 PROJECT FILES:
+   ├── index.php          → Home page
+   ├── login.php          → Login page
+   ├── register.php       → Registration
+   ├── booking.php        → Book rooms
+   ├── my-bookings.php    → User bookings
+   ├── admin/             → Admin panel
+   ├── setup.sql          → Database setup
+   └── README.md          → Full documentation
+
+🆘 TROUBLESHOOTING:
+
+   Problem: Database connection error
+   Solution: Start MySQL in XAMPP Control Panel
+
+   Problem: Page not found
+   Solution: Check Apache is running in XAMPP
+
+   Problem: Can't login
+   Solution: Re-import setup.sql file
+
+📖 DOCUMENTATION:
+   - README.md          → Complete guide
+   - INSTALLATION.md    → Detailed setup
+   - PROJECT-OVERVIEW.md → Technical details
+
+💻 TECHNOLOGY STACK:
+   • PHP (Vanilla, no frameworks)
+   • MySQL with PDO
+   • HTML5 + CSS3
+   • Vanilla JavaScript
+
+🎨 DESIGN:
+   • Premium luxury dark theme
+   • Fully responsive
+   • Smooth animations
+   • Modern UI/UX
+
+🔒 SECURITY:
+   • Password hashing (bcrypt)
+   • SQL injection prevention
+   • XSS protection
+   • Session security
+
+═══════════════════════════════════════════════════════════════════
+
+Need help? Check README.md for detailed documentation!
+
+Built with ❤️ for educational purposes
