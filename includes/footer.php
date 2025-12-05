@@ -3,21 +3,36 @@
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
-                <div class="footer-section">
-                    <h3>The Royal</h3>
-                    <p>Experience luxury and comfort at its finest.</p>
+                <div class="footer-section footer-brand">
+                    <h3 class="footer-logo">THE ROYAL</h3>
+                    <p class="footer-tagline">Experience luxury and comfort at its finest.</p>
+                    <div class="footer-accent-line"></div>
                 </div>
                 <div class="footer-section">
-                    <h4>Quick Links</h4>
-                    <a href="/the-royal/index.php">Home</a>
-                    <?php if (is_logged_in()): ?>
-                        <a href="/the-royal/my-bookings.php">My Bookings</a>
-                    <?php endif; ?>
+                    <h4 class="footer-title">Quick Links</h4>
+                    <div class="footer-links">
+                        <a href="/the-royal/index.php" class="footer-link">Home</a>
+                        <a href="/the-royal/rooms.php" class="footer-link">Our Rooms</a>
+                        <?php if (is_logged_in()): ?>
+                            <a href="/the-royal/my-bookings.php" class="footer-link">My Bookings</a>
+                        <?php else: ?>
+                            <a href="/the-royal/login.php" class="footer-link">Login</a>
+                            <a href="/the-royal/register.php" class="footer-link">Register</a>
+                        <?php endif; ?>
+                    </div>
                 </div>
                 <div class="footer-section">
-                    <h4>Contact</h4>
-                    <p>Email: info@theroyal.com</p>
-                    <p>Phone: +1 (555) 123-4567</p>
+                    <h4 class="footer-title">Contact</h4>
+                    <div class="footer-contact">
+                        <p class="footer-contact-item">
+                            <span class="footer-contact-label">Email:</span>
+                            <a href="mailto:info@theroyal.com" class="footer-contact-link">info@theroyal.com</a>
+                        </p>
+                        <p class="footer-contact-item">
+                            <span class="footer-contact-label">Phone:</span>
+                            <span>+1 (555) 123-4567</span>
+                        </p>
+                    </div>
                 </div>
             </div>
             <div class="footer-bottom">
@@ -28,6 +43,7 @@
 
     <script src="/the-royal/public/js/animations.js"></script>
     <script>
+        // Mobile menu toggle
         const mobileMenuToggle = document.getElementById('mobileMenuToggle');
         const navMenu = document.getElementById('navMenu');
 
@@ -37,6 +53,17 @@
                 mobileMenuToggle.classList.toggle('active');
             });
         }
+
+        // Navbar scroll effect
+        const navbar = document.querySelector('.navbar');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
     </script>
     </body>
 

@@ -69,7 +69,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
                 <h3 class="card-title"><?php echo htmlspecialchars($room['type']); ?> - Room <?php echo htmlspecialchars($room['room_number']); ?></h3>
                 <p><strong>Floor:</strong> <?php echo htmlspecialchars($room['floor_number']); ?></p>
-                <p><strong>Price per Night:</strong> $<?php echo number_format($room['price_per_night'], 2); ?></p>
+                <p><strong>Price per Night:</strong> ₹<?php echo number_format($room['price_per_night'], 2); ?></p>
                 <p><?php echo htmlspecialchars($room['description']); ?></p>
             </div>
 
@@ -105,7 +105,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     <div class="form-group">
                         <label class="form-label">Total Price</label>
                         <div style="font-size: 2rem; font-weight: 700; color: var(--accent-blue);">
-                            <span id="total_price">$0.00</span>
+                            <span id="total_price">₹0.00</span>
                         </div>
                     </div>
 

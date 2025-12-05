@@ -97,7 +97,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     </div>
 
                     <div class="form-group">
-                        <label for="price_per_night" class="form-label">Price per Night ($)</label>
+                        <label for="price_per_night" class="form-label">Price per Night (₹)</label>
                         <input type="number" id="price_per_night" name="price_per_night" class="form-input"
                             min="0" step="0.01" value="<?php echo htmlspecialchars($_POST['price_per_night'] ?? ''); ?>" required>
                     </div>

@@ -20,48 +20,95 @@ $stmt = $pdo->query("SELECT COUNT(*) as count FROM rooms WHERE is_available = 1"
 $available_rooms = $stmt->fetch()['count'];
 ?>
 
-<div class="container">
-    <div class="section">
-        <h2 class="section-title">Admin Dashboard</h2>
+<div class="admin-dashboard">
+    <div class="admin-hero">
+        <div class="container">
+            <div class="admin-hero-content">
+                <h1 class="admin-title">Management Console</h1>
+                <p class="admin-subtitle">The Royal Hotel Operations</p>
+            </div>
+        </div>
+    </div>
 
-        <div class="stats-grid">
-            <div class="stat-card">
-                <div class="stat-value">$<?php echo number_format($total_revenue, 2); ?></div>
-                <div class="stat-label">Total Revenue</div>
+    <div class="container">
+        <!-- Stats Overview with Luxury Design -->
+        <div class="admin-stats-luxury">
+            <div class="luxury-stat-item">
+                <div class="luxury-stat-content">
+                    <span class="luxury-stat-label">Total Revenue</span>
+                    <span class="luxury-stat-value">₹<?php echo number_format($total_revenue, 2); ?></span>
+                </div>
+                <div class="luxury-stat-accent"></div>
             </div>
 
-            <div class="stat-card">
-                <div class="stat-value"><?php echo $bookings_today; ?></div>
-                <div class="stat-label">Bookings Today</div>
+            <div class="luxury-stat-item">
+                <div class="luxury-stat-content">
+                    <span class="luxury-stat-label">Today's Bookings</span>
+                    <span class="luxury-stat-value"><?php echo $bookings_today; ?></span>
+                </div>
+                <div class="luxury-stat-accent"></div>
             </div>
 
-            <div class="stat-card">
-                <div class="stat-value"><?php echo $total_rooms; ?></div>
-                <div class="stat-label">Total Rooms</div>
+            <div class="luxury-stat-item">
+                <div class="luxury-stat-content">
+                    <span class="luxury-stat-label">Total Rooms</span>
+                    <span class="luxury-stat-value"><?php echo $total_rooms; ?></span>
+                </div>
+                <div class="luxury-stat-accent"></div>
             </div>
 
-            <div class="stat-card">
-                <div class="stat-value"><?php echo $available_rooms; ?></div>
-                <div class="stat-label">Available Rooms</div>
+            <div class="luxury-stat-item">
+                <div class="luxury-stat-content">
+                    <span class="luxury-stat-label">Available Now</span>
+                    <span class="luxury-stat-value"><?php echo $available_rooms; ?></span>
+                </div>
+                <div class="luxury-stat-accent"></div>
             </div>
         </div>
 
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
-            <div class="card">
-                <h3 class="card-title">Room Management</h3>
-                <p style="margin-bottom: 1.5rem;">Manage hotel rooms, add new rooms, edit or delete existing ones.</p>
-                <a href="/the-royal/admin/rooms.php" class="btn btn-primary" style="width: 100%;">
-                    Manage Rooms
-                </a>
-            </div>
+        <!-- Management Sections -->
+        <div class="admin-management-grid">
+            <a href="/the-royal/admin/rooms.php" class="management-section">
+                <div class="management-header">
+                    <h3>Room Management</h3>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                        <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                </div>
+                <p class="management-description">Configure rooms, pricing, and availability</p>
+                <div class="management-footer">
+                    <span class="management-count"><?php echo $total_rooms; ?> Rooms</span>
+                </div>
+            </a>
 
-            <div class="card">
-                <h3 class="card-title">Booking Management</h3>
-                <p style="margin-bottom: 1.5rem;">View all bookings, check payment status and guest information.</p>
-                <a href="/the-royal/admin/bookings.php" class="btn btn-primary" style="width: 100%;">
-                    View Bookings
-                </a>
-            </div>
+            <a href="/the-royal/admin/bookings.php" class="management-section">
+                <div class="management-header">
+                    <h3>Reservations</h3>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                        <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                </div>
+                <p class="management-description">View and manage guest reservations</p>
+                <div class="management-footer">
+                    <span class="management-count"><?php echo $bookings_today; ?> Today</span>
+                </div>
+            </a>
+
+            <a href="/the-royal/admin/analytics.php" class="management-section">
+                <div class="management-header">
+                    <h3>Analytics</h3>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                        <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                </div>
+                <p class="management-description">Revenue reports and performance metrics</p>
+                <div class="management-footer">
+                    <span class="management-count">View Reports</span>
+                </div>
+            </a>
         </div>
     </div>
 </div>

@@ -68,7 +68,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         <p class="text-center mt-3">
             Don't have an account?
-            <a href="/the-royal/register.php" style="color: var(--accent-blue);">Register here</a>
+            <a href="/the-royal/register.php" class="text-accent">Register here</a>
         </p>
     </div>
 </div>

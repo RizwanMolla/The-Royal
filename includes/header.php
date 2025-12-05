@@ -9,12 +9,9 @@ require_once __DIR__ . '/auth.php';
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?php echo $page_title ?? 'The Royal - Luxury Hotel'; ?></title>
     <link rel="stylesheet" href="/the-royal/public/css/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
 
-<body>
+<body class="<?php echo $body_class ?? ''; ?>">
     <nav class="navbar">
         <div class="container">
             <div class="nav-wrapper">
@@ -27,20 +24,21 @@ require_once __DIR__ . '/auth.php';
                 </button>
 
                 <div class="nav-menu" id="navMenu">
-                    <a href="/the-royal/index.php" class="nav-link">Home</a>
-
                     <?php if (is_logged_in()): ?>
-                        <?php if (!is_admin()): ?>
-                            <a href="/the-royal/my-bookings.php" class="nav-link">My Bookings</a>
-                        <?php endif; ?>
-
                         <?php if (is_admin()): ?>
-                            <a href="/the-royal/admin/dashboard.php" class="nav-link">Admin Dashboard</a>
+                            <a href="/the-royal/admin/dashboard.php" class="nav-link">Dashboard</a>
+                            <a href="/the-royal/admin/rooms.php" class="nav-link">Rooms</a>
+                            <a href="/the-royal/admin/bookings.php" class="nav-link">Bookings</a>
+                            <a href="/the-royal/admin/analytics.php" class="nav-link">Analytics</a>
+                        <?php else: ?>
+                            <a href="/the-royal/rooms.php" class="nav-link">Book Your Room</a>
+                            <a href="/the-royal/my-bookings.php" class="nav-link">My Bookings</a>
                         <?php endif; ?>
 
                         <span class="nav-link user-name">Hello, <?php echo htmlspecialchars(get_user_name()); ?></span>
                         <a href="/the-royal/logout.php" class="btn btn-secondary">Logout</a>
                     <?php else: ?>
+                        <a href="/the-royal/rooms.php" class="nav-link">Our Rooms</a>
                         <a href="/the-royal/login.php" class="btn btn-secondary">Login</a>
                         <a href="/the-royal/register.php" class="btn btn-primary">Register</a>
                     <?php endif; ?>

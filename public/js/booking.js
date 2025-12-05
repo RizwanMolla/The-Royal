@@ -23,12 +23,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
         if (nights > 0) {
           const total = nights * pricePerNight;
-          totalPriceDisplay.textContent = "$" + total.toFixed(2);
+          totalPriceDisplay.textContent = "₹" + total.toFixed(2);
           if (totalPriceHidden) {
             totalPriceHidden.value = total.toFixed(2);
           }
         } else {
-          totalPriceDisplay.textContent = "$0.00";
+          totalPriceDisplay.textContent = "₹0.00";
           if (totalPriceHidden) {
             totalPriceHidden.value = "0";
           }

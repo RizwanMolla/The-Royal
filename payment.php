@@ -79,18 +79,23 @@ $nights = $check_in->diff($check_out)->days;
                 <div class="detail-row" style="font-size: 1.5rem; font-weight: 700;">
                     <span class="detail-label">Total Amount:</span>
                     <span class="detail-value" style="color: var(--accent-blue);">
-                        $<?php echo number_format($booking['total_price'], 2); ?>
+                        ₹<?php echo number_format($booking['total_price'], 2); ?>
                     </span>
                 </div>
             </div>
 
             <?php if ($booking['status'] === 'pending'): ?>
-                <form method="POST" action="/the-royal/process-payment.php">
-                    <input type="hidden" name="booking_id" value="<?php echo $booking['id']; ?>">
-                    <button type="submit" class="btn btn-primary btn-large" style="width: 100%;">
-                        Pay Now
-                    </button>
-                </form>
+                <div class="payment-actions">
+                    <form method="POST" action="/the-royal/process-payment.php" style="flex: 1;">
+                        <input type="hidden" name="booking_id" value="<?php echo $booking['id']; ?>">
+                        <button type="submit" class="btn btn-primary btn-large" style="width: 100%;">
+                            Pay Now
+                        </button>
+                    </form>
+                    <a href="/the-royal/my-bookings.php" class="btn btn-secondary btn-large" style="flex: 1; text-align: center;">
+                        Pay Later
+                    </a>
+                </div>
             <?php else: ?>
                 <div class="alert alert-success text-center">
                     Payment completed successfully!
