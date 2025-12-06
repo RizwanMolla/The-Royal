@@ -24,11 +24,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
             if (isset($user['role']) && $user['role'] === 'admin') {
                 unset($_SESSION['intended_url']);
-                header('Location: /the-royal/admin/dashboard.php');
+                header('Location: admin/dashboard.php');
                 exit();
             }
 
-            $redirect = $_SESSION['intended_url'] ?? '/the-royal/index.php';
+            $redirect = $_SESSION['intended_url'] ?? 'index.php';
             unset($_SESSION['intended_url']);
             header('Location: ' . $redirect);
             exit();
@@ -68,7 +68,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         <p class="text-center mt-3">
             Don't have an account?
-            <a href="/the-royal/register.php" class="text-accent">Register here</a>
+            <a href="register.php" class="text-accent">Register here</a>
         </p>
     </div>
 </div>

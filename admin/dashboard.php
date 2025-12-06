@@ -68,7 +68,7 @@ $available_rooms = $stmt->fetch()['count'];
 
         <!-- Management Sections -->
         <div class="admin-management-grid">
-            <a href="/the-royal/admin/rooms.php" class="management-section">
+            <a href="admin/rooms.php" class="management-section">
                 <div class="management-header">
                     <h3>Room Management</h3>
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -82,7 +82,7 @@ $available_rooms = $stmt->fetch()['count'];
                 </div>
             </a>
 
-            <a href="/the-royal/admin/bookings.php" class="management-section">
+            <a href="admin/bookings.php" class="management-section">
                 <div class="management-header">
                     <h3>Reservations</h3>
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -96,7 +96,7 @@ $available_rooms = $stmt->fetch()['count'];
                 </div>
             </a>
 
-            <a href="/the-royal/admin/analytics.php" class="management-section">
+            <a href="admin/analytics.php" class="management-section">
                 <div class="management-header">
                     <h3>Analytics</h3>
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">

@@ -20,7 +20,7 @@ $rooms = $stmt->fetchAll();
                         <h1 class="admin-title">Room Management</h1>
                         <p class="admin-subtitle">Configure and manage all hotel rooms</p>
                     </div>
-                    <a href="/the-royal/admin/room-create.php" class="btn btn-primary btn-large">
+                    <a href="admin/room-create.php" class="btn btn-primary btn-large">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 20px; height: 20px; margin-right: 0.5rem;">
                             <line x1="12" y1="5" x2="12" y2="19"></line>
                             <line x1="5" y1="12" x2="19" y2="12"></line>
@@ -71,10 +71,10 @@ $rooms = $stmt->fetchAll();
                             </div>
                             <p class="admin-room-description"><?php echo htmlspecialchars(substr($room['description'], 0, 100)); ?>...</p>
                             <div class="admin-room-actions">
-                                <a href="/the-royal/admin/room-edit.php?id=<?php echo $room['id']; ?>" class="btn btn-secondary btn-sm">
+                                <a href="admin/room-edit.php?id=<?php echo $room['id']; ?>" class="btn btn-secondary btn-sm">
                                     Edit
                                 </a>
-                                <a href="/the-royal/admin/room-delete.php?id=<?php echo $room['id']; ?>"
+                                <a href="admin/room-delete.php?id=<?php echo $room['id']; ?>"
                                     class="btn btn-danger btn-sm"
                                     onclick="return confirm('Are you sure you want to delete this room?');">
                                     Delete

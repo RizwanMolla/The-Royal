@@ -15,7 +15,7 @@ $stmt->execute([$room_id]);
 $room = $stmt->fetch();
 
 if (!$room) {
-    header('Location: /the-royal/index.php');
+    header('Location: index.php');
     exit();
 }
 
@@ -44,7 +44,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         if ($stmt->execute([get_user_id(), $room_id, $check_in, $check_out, $total_price, $guests_adults, $guests_children])) {
             $booking_id = $pdo->lastInsertId();
-            header('Location: /the-royal/payment.php?booking_id=' . $booking_id);
+            header('Location: payment.php?booking_id=' . $booking_id);
             exit();
         } else {
             $error = 'Booking failed. Please try again.';
@@ -116,6 +116,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     </div>
 </div>
 
-<script src="/the-royal/public/js/booking.js"></script>
+<script src="public/js/booking.js?v=1.0.0"></script>
 
 <?php require_once 'includes/footer.php'; ?>

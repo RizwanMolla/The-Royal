@@ -32,7 +32,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
             if ($stmt->execute([$name, $email, $hashed_password])) {
                 $success = 'Registration successful! You can now login.';
-                header('refresh:2;url=/the-royal/login.php');
+                header('refresh:2;url=login.php');
             } else {
                 $error = 'Registration failed. Please try again.';
             }
@@ -84,7 +84,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         <p class="text-center mt-3">
             Already have an account?
-            <a href="/the-royal/login.php" class="text-accent">Login here</a>
+            <a href="login.php" class="text-accent">Login here</a>
         </p>
     </div>
 </div>

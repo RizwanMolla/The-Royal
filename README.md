@@ -68,7 +68,7 @@ To get a local copy up and running, follow these steps.
     ```
 
 5.  **Run the Application**
-    - Open your web browser and navigate to `http://localhost/the-royal/`.
+    - Open your web browser and navigate to `http://localhost`.
 
 ---
 

@@ -57,10 +57,10 @@ $booking = $stmt->fetch();
                 <?php endif; ?>
 
                 <div style="display: flex; gap: 1rem; margin-top: 2rem;">
-                    <a href="/the-royal/my-bookings.php" class="btn btn-primary" style="flex: 1;">
+                    <a href="my-bookings.php" class="btn btn-primary" style="flex: 1;">
                         View My Bookings
                     </a>
-                    <a href="/the-royal/index.php" class="btn btn-secondary" style="flex: 1;">
+                    <a href="index.php" class="btn btn-secondary" style="flex: 1;">
                         Back to Home
                     </a>
                 </div>

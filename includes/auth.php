@@ -7,7 +7,7 @@ function check_auth()
 {
     if (!isset($_SESSION['user_id'])) {
         $_SESSION['intended_url'] = $_SERVER['REQUEST_URI'];
-        header('Location: /the-royal/login.php');
+        header('Location: login.php');
         exit();
     }
 }
@@ -16,7 +16,7 @@ function check_admin()
 {
     check_auth();
     if ($_SESSION['role'] !== 'admin') {
-        header('Location: /the-royal/index.php');
+        header('Location: index.php');
         exit();
     }
 }

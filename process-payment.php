@@ -14,10 +14,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $stmt = $pdo->prepare("UPDATE bookings SET status = 'paid' WHERE id = ?");
         $stmt->execute([$booking_id]);
 
-        header('Location: /the-royal/success.php?booking_id=' . $booking_id);
+        header('Location: success.php?booking_id=' . $booking_id);
         exit();
     }
 }
 
-header('Location: /the-royal/index.php');
+header('Location: index.php');
 exit();

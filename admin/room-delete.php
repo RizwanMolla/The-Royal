@@ -11,14 +11,14 @@ $stmt->execute([$room_id]);
 $booking_count = $stmt->fetch()['count'];
 
 if ($booking_count > 0) {
-    header('Location: /the-royal/admin/rooms.php?error=' . urlencode('Cannot delete room with existing bookings.'));
+    header('Location: admin/rooms.php?error=' . urlencode('Cannot delete room with existing bookings.'));
     exit();
 }
 
 $stmt = $pdo->prepare("DELETE FROM rooms WHERE id = ?");
 if ($stmt->execute([$room_id])) {
-    header('Location: /the-royal/admin/rooms.php?success=deleted');
+    header('Location: admin/rooms.php?success=deleted');
 } else {
-    header('Location: /the-royal/admin/rooms.php?error=' . urlencode('Failed to delete room.'));
+    header('Location: admin/rooms.php?error=' . urlencode('Failed to delete room.'));
 }
 exit();

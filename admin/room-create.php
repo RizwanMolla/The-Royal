@@ -39,7 +39,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             ");
 
             if ($stmt->execute([$room_number, $floor_number, $price_per_night, $type, $description, $image_url, $is_available])) {
-                header('Location: /the-royal/admin/rooms.php?success=created');
+                header('Location: admin/rooms.php?success=created');
                 exit();
             } else {
                 $error = 'Failed to create room. Please try again.';
@@ -109,7 +109,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
                     <div class="flex gap-2">
                         <button type="submit" class="btn btn-primary" style="flex: 1;">Create Room</button>
-                        <a href="/the-royal/admin/rooms.php" class="btn btn-tertiary" style="flex: 1; text-align: center;">Cancel</a>
+                        <a href="admin/rooms.php" class="btn btn-tertiary" style="flex: 1; text-align: center;">Cancel</a>
                     </div>
                 </form>
             </div>

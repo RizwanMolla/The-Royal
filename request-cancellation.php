@@ -13,13 +13,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $booking = $stmt->fetch();
 
     if (!$booking) {
-        header('Location: /the-royal/my-bookings.php?error=invalid');
+        header('Location: my-bookings.php?error=invalid');
         exit();
     }
 
     // Check if already requested or approved
     if ($booking['cancellation_status'] !== 'none') {
-        header('Location: /the-royal/my-bookings.php?error=already_requested');
+        header('Location: my-bookings.php?error=already_requested');
         exit();
     }
 
@@ -27,9 +27,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $stmt = $pdo->prepare("UPDATE bookings SET cancellation_status = 'requested' WHERE id = ?");
     $stmt->execute([$booking_id]);
 
-    header('Location: /the-royal/my-bookings.php?success=cancellation_requested');
+    header('Location: my-bookings.php?success=cancellation_requested');
     exit();
 }
 
-header('Location: /the-royal/my-bookings.php');
+header('Location: my-bookings.php');
 exit();

@@ -782,7 +782,7 @@ img {
     .payment-actions {
         flex-direction: column;
     }
-    
+
     .payment-actions form,
     .payment-actions .btn {
         width: 100%;
@@ -1318,16 +1318,16 @@ tr:hover {
         align-items: flex-start;
         gap: 1rem;
     }
-    
+
     .analytics-booking-meta {
         width: 100%;
         justify-content: space-between;
     }
-    
+
     .analytics-cards-grid {
         grid-template-columns: 1fr;
     }
-    
+
     .analytics-room-grid {
         grid-template-columns: 1fr;
     }
@@ -1380,7 +1380,7 @@ tr:hover {
         flex-direction: column;
         align-items: flex-start;
     }
-    
+
     .admin-hero-header .btn {
         width: 100%;
         justify-content: center;
@@ -1669,30 +1669,30 @@ tr:hover {
     .admin-stats-luxury {
         grid-template-columns: 1fr;
     }
-    
+
     .luxury-stat-item {
         border-right: none;
         border-bottom: 1px solid var(--border-color);
     }
-    
+
     .luxury-stat-item:last-child {
         border-bottom: none;
     }
-    
+
     .admin-management-grid {
         grid-template-columns: 1fr;
     }
-    
+
     .admin-page-header {
         flex-direction: column;
         align-items: flex-start;
     }
-    
+
     .admin-page-header .btn {
         width: 100%;
         justify-content: center;
     }
-    
+
     .admin-rooms-grid {
         grid-template-columns: 1fr;
     }
@@ -1813,7 +1813,7 @@ tr:hover {
         grid-template-columns: 1fr;
         gap: 2.5rem;
     }
-    
+
     .footer {
         padding: 3rem 0 1.5rem;
     }
@@ -1882,7 +1882,54 @@ tr:hover {
     }
 
     .section {
-        padding: 4rem 0;
+        padding: 2.5rem 0;
+    }
+
+    /* Mobile Image Optimization */
+    .feature-image {
+        height: 180px;
+    }
+
+    .features-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .room-card img {
+        height: 200px;
+    }
+
+    .admin-room-image {
+        height: 160px;
+    }
+
+    .section-title {
+        margin-top: 40px;
+        font-size: 2rem;
+    }
+
+    .section-subtitle {
+        font-size: 1rem;
+        margin-bottom: 2rem;
+    }
+
+    .section-title::after {
+        width: 60px;
+        height: 3px;
+    }
+
+    .feature-content {
+        padding: 1.5rem;
+    }
+
+    .feature-content h3 {
+        font-size: 1.1rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .feature-content p {
+        font-size: 0.9rem;
+        line-height: 1.6;
     }
 }
 

@@ -44,7 +44,7 @@
 Open your browser and navigate to:
 
 ```
-http://localhost/the-royal/
+http://localhost
 ```
 
 ### 6. Login
@@ -75,7 +75,7 @@ http://localhost/the-royal/
 
 - Verify Apache is running in XAMPP (green indicator)
 - Check project is in correct location: `C:\xampp\htdocs\the-royal\`
-- Access via: `http://localhost/the-royal/` (include the trailing slash)
+- Access via: `http://localhost` (include the trailing slash)
 
 ### Problem: Images not loading
 

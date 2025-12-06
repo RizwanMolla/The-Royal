@@ -35,7 +35,7 @@ $rooms = $stmt->fetchAll();
                                 <span>/ night</span>
                             </p>
                             <p><?php echo htmlspecialchars(substr($room['description'], 0, 100)); ?>...</p>
-                            <a href="/the-royal/booking.php?room_id=<?php echo $room['id']; ?>"
+                            <a href="booking.php?room_id=<?php echo $room['id']; ?>"
                                 class="btn btn-primary" style="width: 100%; margin-top: 1rem;">
                                 Book Now
                             </a>

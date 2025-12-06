@@ -20,7 +20,7 @@ $stmt->execute([$booking_id, get_user_id()]);
 $booking = $stmt->fetch();
 
 if (!$booking) {
-    header('Location: /the-royal/index.php');
+    header('Location: index.php');
     exit();
 }
 
@@ -86,13 +86,13 @@ $nights = $check_in->diff($check_out)->days;
 
             <?php if ($booking['status'] === 'pending'): ?>
                 <div class="payment-actions">
-                    <form method="POST" action="/the-royal/process-payment.php" style="flex: 1;">
+                    <form method="POST" action="process-payment.php" style="flex: 1;">
                         <input type="hidden" name="booking_id" value="<?php echo $booking['id']; ?>">
                         <button type="submit" class="btn btn-primary btn-large" style="width: 100%;">
                             Pay Now
                         </button>
                     </form>
-                    <a href="/the-royal/my-bookings.php" class="btn btn-secondary btn-large" style="flex: 1; text-align: center;">
+                    <a href="my-bookings.php" class="btn btn-secondary btn-large" style="flex: 1; text-align: center;">
                         Pay Later
                     </a>
                 </div>
@@ -100,7 +100,7 @@ $nights = $check_in->diff($check_out)->days;
                 <div class="alert alert-success text-center">
                     Payment completed successfully!
                 </div>
-                <a href="/the-royal/my-bookings.php" class="btn btn-primary" style="width: 100%; display: block; text-align: center;">
+                <a href="my-bookings.php" class="btn btn-primary" style="width: 100%; display: block; text-align: center;">
                     View My Bookings
                 </a>
             <?php endif; ?>
