@@ -10,9 +10,9 @@ require_once 'includes/header.php';
         <h1>Experience Luxury at The Royal</h1>
         <p>Indulge in premium comfort and world-class service at our exclusive hotel</p>
         <?php if (is_logged_in()): ?>
-            <a href="rooms.php" class="btn btn-primary btn-large">Browse Rooms</a>
+            <a href="/app/rooms.php" class="btn btn-primary btn-large">Browse Rooms</a>
         <?php else: ?>
-            <a href="register.php" class="btn btn-primary btn-large">Book Your Stay</a>
+            <a href="/app/register.php" class="btn btn-primary btn-large">Book Your Stay</a>
         <?php endif; ?>
     </div>
 </section>
@@ -56,7 +56,7 @@ require_once 'includes/header.php';
         </div>
 
         <div class="text-center" style="margin-top: 3rem;">
-            <a href="rooms.php" class="btn btn-primary btn-large">View All Rooms</a>
+            <a href="/app/rooms.php" class="btn btn-primary btn-large">View All Rooms</a>
         </div>
     </div>
 </section>

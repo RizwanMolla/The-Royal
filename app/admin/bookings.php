@@ -79,14 +79,14 @@ $bookings = $stmt->fetchAll();
                                     if ($cancellation_status === 'requested'):
                                     ?>
                                         <div style="display: flex; gap: 0.5rem; margin-top: 0.5rem;">
-                                            <form method="POST" action="admin/handle-cancellation.php" style="display: inline;">
+                                            <form method="POST" action="/app/admin/handle-cancellation.php" style="display: inline;">
                                                 <input type="hidden" name="booking_id" value="<?php echo $booking['id']; ?>">
                                                 <input type="hidden" name="action" value="approve">
                                                 <button type="submit" class="btn btn-sm" style="background-color: #10b981; color: white; border: none;">
                                                     Approve Cancel
                                                 </button>
                                             </form>
-                                            <form method="POST" action="admin/handle-cancellation.php" style="display: inline;">
+                                            <form method="POST" action="/app/admin/handle-cancellation.php" style="display: inline;">
                                                 <input type="hidden" name="booking_id" value="<?php echo $booking['id']; ?>">
                                                 <input type="hidden" name="action" value="reject">
                                                 <button type="submit" class="btn btn-danger btn-sm">

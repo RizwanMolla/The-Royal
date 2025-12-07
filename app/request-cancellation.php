@@ -1,6 +1,6 @@
 <?php
-require_once 'config/database.php';
-require_once 'includes/auth.php';
+require_once '../config/database.php';
+require_once '../includes/auth.php';
 
 check_auth();
 
@@ -13,13 +13,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $booking = $stmt->fetch();
 
     if (!$booking) {
-        header('Location: my-bookings.php?error=invalid');
+        header('Location: /app/my-bookings.php?error=invalid');
         exit();
     }
 
     // Check if already requested or approved
     if ($booking['cancellation_status'] !== 'none') {
-        header('Location: my-bookings.php?error=already_requested');
+        header('Location: /app/my-bookings.php?error=already_requested');
         exit();
     }
 
@@ -27,9 +27,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $stmt = $pdo->prepare("UPDATE bookings SET cancellation_status = 'requested' WHERE id = ?");
     $stmt->execute([$booking_id]);
 
-    header('Location: my-bookings.php?success=cancellation_requested');
+    header('Location: /app/my-bookings.php?success=cancellation_requested');
     exit();
 }
 
-header('Location: my-bookings.php');
+header('Location: /app/my-bookings.php');
 exit();

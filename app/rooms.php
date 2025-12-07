@@ -1,7 +1,7 @@
 <?php
 $page_title = 'Our Luxury Rooms - The Royal';
-require_once 'config/database.php';
-require_once 'includes/header.php';
+require_once '../config/database.php';
+require_once '../includes/header.php';
 
 $stmt = $pdo->query("SELECT * FROM rooms WHERE is_available = 1 ORDER BY type, price_per_night");
 $rooms = $stmt->fetchAll();
@@ -35,7 +35,7 @@ $rooms = $stmt->fetchAll();
                                 <span>/ night</span>
                             </p>
                             <p><?php echo htmlspecialchars(substr($room['description'], 0, 100)); ?>...</p>
-                            <a href="booking.php?room_id=<?php echo $room['id']; ?>"
+                            <a href="/app/booking.php?room_id=<?php echo $room['id']; ?>"
                                 class="btn btn-primary" style="width: 100%; margin-top: 1rem;">
                                 Book Now
                             </a>
@@ -47,4 +47,4 @@ $rooms = $stmt->fetchAll();
     </div>
 </section>
 
-<?php require_once 'includes/footer.php'; ?>
+<?php require_once '../includes/footer.php'; ?>

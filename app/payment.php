@@ -1,11 +1,11 @@
 <?php
 $page_title = 'Payment - The Royal';
-require_once 'config/database.php';
-require_once 'includes/auth.php';
+require_once '../config/database.php';
+require_once '../includes/auth.php';
 
 check_auth();
 
-require_once 'includes/header.php';
+require_once '../includes/header.php';
 
 $booking_id = $_GET['booking_id'] ?? 0;
 
@@ -20,7 +20,7 @@ $stmt->execute([$booking_id, get_user_id()]);
 $booking = $stmt->fetch();
 
 if (!$booking) {
-    header('Location: index.php');
+    header('Location: /');
     exit();
 }
 
@@ -86,13 +86,13 @@ $nights = $check_in->diff($check_out)->days;
 
             <?php if ($booking['status'] === 'pending'): ?>
                 <div class="payment-actions">
-                    <form method="POST" action="process-payment.php" style="flex: 1;">
+                    <form method="POST" action="/app/process-payment.php" style="flex: 1;">
                         <input type="hidden" name="booking_id" value="<?php echo $booking['id']; ?>">
                         <button type="submit" class="btn btn-primary btn-large" style="width: 100%;">
                             Pay Now
                         </button>
                     </form>
-                    <a href="my-bookings.php" class="btn btn-secondary btn-large" style="flex: 1; text-align: center;">
+                    <a href="/app/my-bookings.php" class="btn btn-secondary btn-large" style="flex: 1; text-align: center;">
                         Pay Later
                     </a>
                 </div>
@@ -100,7 +100,7 @@ $nights = $check_in->diff($check_out)->days;
                 <div class="alert alert-success text-center">
                     Payment completed successfully!
                 </div>
-                <a href="my-bookings.php" class="btn btn-primary" style="width: 100%; display: block; text-align: center;">
+                <a href="/app/my-bookings.php" class="btn btn-primary" style="width: 100%; display: block; text-align: center;">
                     View My Bookings
                 </a>
             <?php endif; ?>

@@ -1,11 +1,11 @@
 <?php
 $page_title = 'Booking Successful - The Royal';
-require_once 'config/database.php';
-require_once 'includes/auth.php';
+require_once '../config/database.php';
+require_once '../includes/auth.php';
 
 check_auth();
 
-require_once 'includes/header.php';
+require_once '../includes/header.php';
 
 $booking_id = $_GET['booking_id'] ?? 0;
 
@@ -57,10 +57,10 @@ $booking = $stmt->fetch();
                 <?php endif; ?>
 
                 <div style="display: flex; gap: 1rem; margin-top: 2rem;">
-                    <a href="my-bookings.php" class="btn btn-primary" style="flex: 1;">
+                    <a href="/app/my-bookings.php" class="btn btn-primary" style="flex: 1;">
                         View My Bookings
                     </a>
-                    <a href="index.php" class="btn btn-secondary" style="flex: 1;">
+                    <a href="/" class="btn btn-secondary" style="flex: 1;">
                         Back to Home
                     </a>
                 </div>

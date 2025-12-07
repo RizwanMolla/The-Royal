@@ -138,10 +138,10 @@ Database: the_royal
 If your XAMPP has different MySQL credentials, edit `config/database.php`:
 
 ```php
-define('DB_HOST', 'localhost');
-define('DB_USER', 'root');        // Change if different
-define('DB_PASS', '');            // Add password if set
-define('DB_NAME', 'the_royal');
+define("DB_HOST", "localhost");
+define("DB_USER", "root");        // Change if different
+define("DB_PASS", "");            // Add password if set
+define("DB_NAME", "the_royal");
 ```
 
 ## Next Steps

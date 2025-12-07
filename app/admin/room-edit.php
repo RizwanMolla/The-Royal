@@ -15,7 +15,7 @@ $stmt->execute([$room_id]);
 $room = $stmt->fetch();
 
 if (!$room) {
-    header('Location: admin/rooms.php');
+    header('Location: /app/admin/rooms.php');
     exit();
 }
 
@@ -51,7 +51,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             ");
 
             if ($stmt->execute([$room_number, $floor_number, $price_per_night, $type, $description, $image_url, $is_available, $room_id])) {
-                header('Location: admin/rooms.php?success=updated');
+                header('Location: /app/admin/rooms.php?success=updated');
                 exit();
             } else {
                 $error = 'Failed to update room. Please try again.';
@@ -123,7 +123,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
                     <div class="flex gap-2">
                         <button type="submit" class="btn btn-primary" style="flex: 1;">Update Room</button>
-                        <a href="admin/rooms.php" class="btn btn-tertiary" style="flex: 1; text-align: center;">Cancel</a>
+                        <a href="/app/admin/rooms.php" class="btn btn-tertiary" style="flex: 1; text-align: center;">Cancel</a>
                     </div>
                 </form>
             </div>

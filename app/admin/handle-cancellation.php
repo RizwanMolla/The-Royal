@@ -9,7 +9,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $action = $_POST['action'] ?? '';
 
     if (!in_array($action, ['approve', 'reject'])) {
-        header('Location: admin/bookings.php?error=invalid_action');
+        header('Location: /app/admin/bookings.php?error=invalid_action');
         exit();
     }
 
@@ -30,9 +30,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $stmt->execute([$booking_id]);
     }
 
-    header('Location: admin/bookings.php?success=' . $action . 'd');
+    header('Location: /app/admin/bookings.php?success=' . $action . 'd');
     exit();
 }
 
-header('Location: admin/bookings.php');
+header('Location: /app/admin/bookings.php');
 exit();

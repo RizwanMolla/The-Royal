@@ -1,11 +1,11 @@
 <?php
 $page_title = 'My Bookings - The Royal';
-require_once 'config/database.php';
-require_once 'includes/auth.php';
+require_once '../config/database.php';
+require_once '../includes/auth.php';
 
 check_auth();
 
-require_once 'includes/header.php';
+require_once '../includes/header.php';
 
 $stmt = $pdo->prepare("
     SELECT b.*, r.room_number, r.type, r.image_url
@@ -43,7 +43,7 @@ $bookings = $stmt->fetchAll();
         <?php if (empty($bookings)): ?>
             <div class="card text-center">
                 <p style="font-size: 1.125rem; margin-bottom: 1.5rem;">You haven't made any bookings yet.</p>
-                <a href="index.php" class="btn btn-primary">Browse Rooms</a>
+                <a href="/" class="btn btn-primary">Browse Rooms</a>
             </div>
         <?php else: ?>
             <div class="table-container">
@@ -87,7 +87,7 @@ $bookings = $stmt->fetchAll();
                                 <td>
                                     <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
                                         <?php if ($booking['status'] === 'pending'): ?>
-                                            <a href="payment.php?booking_id=<?php echo $booking['id']; ?>"
+                                            <a href="/app/payment.php?booking_id=<?php echo $booking['id']; ?>"
                                                 class="btn btn-primary btn-sm">
                                                 Pay Now
                                             </a>
@@ -97,7 +97,7 @@ $bookings = $stmt->fetchAll();
                                         $cancellation_status = $booking['cancellation_status'] ?? 'none';
                                         if ($cancellation_status === 'none'):
                                         ?>
-                                            <form method="POST" action="request-cancellation.php" style="display: inline;">
+                                            <form method="POST" action="/app/request-cancellation.php" style="display: inline;">
                                                 <input type="hidden" name="booking_id" value="<?php echo $booking['id']; ?>">
                                                 <button type="submit" class="btn btn-danger btn-sm"
                                                     onclick="return confirm('Are you sure you want to request cancellation?');">
@@ -122,4 +122,4 @@ $bookings = $stmt->fetchAll();
     </div>
 </div>
 
-<?php require_once 'includes/footer.php'; ?>
+<?php require_once '../includes/footer.php'; ?>

@@ -1,6 +1,6 @@
 <?php
-require_once 'config/database.php';
-require_once 'includes/auth.php';
+require_once '../config/database.php';
+require_once '../includes/auth.php';
 
 check_auth();
 
@@ -14,10 +14,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $stmt = $pdo->prepare("UPDATE bookings SET status = 'paid' WHERE id = ?");
         $stmt->execute([$booking_id]);
 
-        header('Location: success.php?booking_id=' . $booking_id);
+        header('Location: /app/success.php?booking_id=' . $booking_id);
         exit();
     }
 }
 
-header('Location: index.php');
+header('Location: /');
 exit();

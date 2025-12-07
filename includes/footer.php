@@ -11,13 +11,13 @@
                 <div class="footer-section">
                     <h4 class="footer-title">Quick Links</h4>
                     <div class="footer-links">
-                        <a href="index.php" class="footer-link">Home</a>
-                        <a href="rooms.php" class="footer-link">Our Rooms</a>
+                        <a href="/" class="footer-link">Home</a>
+                        <a href="/app/rooms.php" class="footer-link">Our Rooms</a>
                         <?php if (is_logged_in()): ?>
-                            <a href="my-bookings.php" class="footer-link">My Bookings</a>
+                            <a href="/app/my-bookings.php" class="footer-link">My Bookings</a>
                         <?php else: ?>
-                            <a href="login.php" class="footer-link">Login</a>
-                            <a href="register.php" class="footer-link">Register</a>
+                            <a href="/app/login.php" class="footer-link">Login</a>
+                            <a href="/app/register.php" class="footer-link">Register</a>
                         <?php endif; ?>
                     </div>
                 </div>
@@ -41,7 +41,7 @@
         </div>
     </footer>
 
-    <script src="public/js/animations.js?v=1.0.0"></script>
+    <script src="/public/js/animations.js?v=1.0.0"></script>
     <script>
         // Mobile menu toggle
         const mobileMenuToggle = document.getElementById('mobileMenuToggle');

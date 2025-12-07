@@ -1,7 +1,7 @@
 <?php
 $page_title = 'Login - The Royal';
-require_once 'config/database.php';
-require_once 'includes/header.php';
+require_once '../config/database.php';
+require_once '../includes/header.php';
 
 $error = '';
 
@@ -24,11 +24,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
             if (isset($user['role']) && $user['role'] === 'admin') {
                 unset($_SESSION['intended_url']);
-                header('Location: admin/dashboard.php');
+                header('Location: /app/admin/dashboard.php');
                 exit();
             }
 
-            $redirect = $_SESSION['intended_url'] ?? 'index.php';
+            $redirect = $_SESSION['intended_url'] ?? '/';
             unset($_SESSION['intended_url']);
             header('Location: ' . $redirect);
             exit();
@@ -68,9 +68,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         <p class="text-center mt-3">
             Don't have an account?
-            <a href="register.php" class="text-accent">Register here</a>
+            <a href="/app/register.php" class="text-accent">Register here</a>
         </p>
     </div>
 </div>
 
-<?php require_once 'includes/footer.php'; ?>
+<?php require_once '../includes/footer.php'; ?>
