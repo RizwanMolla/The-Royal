@@ -258,6 +258,8 @@ img {
     display: flex;
     align-items: center;
     gap: 1.5rem;
+    flex-wrap: wrap;
+    justify-content: flex-end;
 }
 
 .nav-link {
@@ -1947,4 +1949,120 @@ tr:hover {
 
 .w-full {
     width: 100%;
+}
+
+/* User Menu Dropdown */
+.user-menu {
+    position: relative;
+    display: inline-block;
+    margin-left: auto;
+}
+
+.user-name-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-family: var(--font-body);
+    font-weight: 500;
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    padding: 0.5rem 0.75rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    white-space: nowrap;
+    transition: color 0.3s ease;
+}
+
+.homepage .navbar .user-name-btn {
+    color: rgba(255, 255, 255, 0.95);
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.8), 0 1px 3px rgba(0, 0, 0, 0.9);
+}
+
+.homepage .navbar.scrolled .user-name-btn {
+    color: var(--text-secondary);
+    text-shadow: none;
+}
+
+.dropdown-icon {
+    font-size: 0.7rem;
+    transition: transform 0.3s ease;
+    display: inline-block;
+}
+
+.user-name-btn:hover .dropdown-icon,
+.user-menu.active .dropdown-icon {
+    transform: rotate(180deg);
+}
+
+.homepage .navbar .dropdown-icon {
+    color: rgba(255, 255, 255, 0.95);
+}
+
+.homepage .navbar.scrolled .dropdown-icon {
+    color: var(--text-secondary);
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: calc(100% + 10px);
+    background-color: var(--bg-primary);
+    min-width: 180px;
+    box-shadow: var(--box-shadow-subtle);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    z-index: 1001;
+    overflow: hidden;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.dropdown-content.show {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.dropdown-content a {
+    color: var(--text-secondary);
+    padding: 0.75rem 1.25rem;
+    text-decoration: none;
+    display: block;
+    font-size: 0.9rem;
+    transition: background-color 0.2s ease;
+}
+
+.dropdown-content a:hover {
+    background-color: var(--bg-secondary);
+    color: var(--accent-primary);
+}
+
+@media (max-width: 768px) {
+    .user-menu {
+        width: 100%;
+    }
+
+    .user-name-btn {
+        width: 100%;
+        justify-content: space-between;
+        padding: 0.75rem 1rem;
+        border-top: 1px solid var(--border-color);
+    }
+
+    .dropdown-content {
+        position: static;
+        width: 100%;
+        box-shadow: none;
+        border: none;
+        border-top: 1px solid var(--border-color);
+        display: none;
+        /* controlled by JS */
+    }
+
+    .dropdown-content.show {
+        display: block;
+    }
 }

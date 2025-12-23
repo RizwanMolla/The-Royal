@@ -35,8 +35,15 @@ require_once __DIR__ . '/auth.php';
                             <a href="/app/my-bookings.php" class="nav-link">My Bookings</a>
                         <?php endif; ?>
 
-                        <span class="nav-link user-name">Hello, <?php echo htmlspecialchars(get_user_name()); ?></span>
-                        <a href="/app/logout.php" class="btn btn-secondary">Logout</a>
+                        <div class="user-menu">
+                            <button class="user-name-btn" id="userMenuBtn">
+                                Hello, <?php echo htmlspecialchars(get_user_name()); ?> <span class="dropdown-icon">&#9662;</span>
+                            </button>
+                            <div class="dropdown-content" id="userDropdown">
+                                <a href="/app/change-password.php">Change Password</a>
+                                <a href="/app/logout.php">Logout</a>
+                            </div>
+                        </div>
                     <?php else: ?>
                         <a href="/app/rooms.php" class="nav-link">Our Rooms</a>
                         <a href="/app/login.php" class="btn btn-secondary">Login</a>
@@ -46,5 +53,5 @@ require_once __DIR__ . '/auth.php';
             </div>
         </div>
     </nav>
-
+    <script src="/public/js/main.js" defer></script>
     <main>
